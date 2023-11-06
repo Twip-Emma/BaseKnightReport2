@@ -2,7 +2,7 @@
  * @Author: 七画一只妖 1157529280@qq.com
  * @Date: 2023-03-27 09:43:36
  * @LastEditors: 七画一只妖 1157529280@qq.com
- * @LastEditTime: 2023-11-06 12:38:23
+ * @LastEditTime: 2023-11-06 12:44:55
  * @FilePath: \060坎公骑冠剑会战工具\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -22,6 +22,8 @@
 >- 3.查询当前进度
 
 > 注意：payload文件夹下的内容已废弃，仅供参考
+
+> [B站教程](https://www.bilibili.com/video/BV1yz4y1A7PQ/)
 
 ### 使用方法
 1.在config.json文件内填写好你的信息
