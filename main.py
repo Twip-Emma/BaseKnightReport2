@@ -17,12 +17,12 @@ loop = asyncio.get_event_loop()
 # 填写完cookies之后就能在这操作了，想要运行下面功能就把哪行解开运行即可
 
 # 日报
-print(loop.run_until_complete(data_format.today_report("114514")))
+# print(loop.run_until_complete(data_format.today_report("114514")))
 
 # 总伤
 # print(loop.run_until_complete(data_format.all_report("114514")))
 
 # 进度
-# print(loop.run_until_complete(data_format.get_rate("114514")))
+print(loop.run_until_complete(data_format.get_rate("114514")))
 
 # print(loop.run_until_complete(dao.get_data("2023-10-06")))
