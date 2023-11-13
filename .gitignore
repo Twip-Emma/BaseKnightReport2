@@ -145,3 +145,5 @@ dmypy.json
 # /payload2/cookies.py
 
 /.env.prod
+
+config.json

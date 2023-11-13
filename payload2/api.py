@@ -2,7 +2,7 @@
 Author: 七画一只妖 1157529280@qq.com
 Date: 2023-10-06 23:32:24
 LastEditors: 七画一只妖 1157529280@qq.com
-LastEditTime: 2023-11-06 10:52:09
+LastEditTime: 2023-11-13 14:50:56
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
 import hashlib
@@ -41,52 +41,35 @@ app_secret = 'xoNO7qa9761mNPyLtTn8zxPeX80iLnDonYCOzqS7bG8='
 
 # 获取日期
 async def get_date():
-    try:
-        async with httpx.AsyncClient(timeout=None) as client:
-            r = await client.get(url=DATE_URL, headers=header, params=get_sign())
-            re_data: dict = r.json()
-            return re_data
-    except Exception as e:
-        print(e)
-        return {"code": 500,
-                "message": "error"}
+    async with httpx.AsyncClient(timeout=None) as client:
+        r = await client.get(url=DATE_URL, headers=header, params=get_sign())
+        re_data: dict = r.json()
+        await check_data(re_data)
+        return re_data
     
 
 async def get_daily():
-    try:
-        async with httpx.AsyncClient(timeout=None) as client:
-            r = await client.get(url=DAILY_URL, headers=header, params=get_sign())
-            re_data: dict = r.json()
-            return re_data
-    except Exception as e:
-        print(e)
-        return {"code": 500,
-                "message": "error"}
+    async with httpx.AsyncClient(timeout=None) as client:
+        r = await client.get(url=DAILY_URL, headers=header, params=get_sign())
+        re_data: dict = r.json()
+        await check_data(re_data)
+        return re_data
     
 
 async def get_daily_target(date: str):
-    try:
-        time.sleep(1)
-        async with httpx.AsyncClient(timeout=None) as client:
-            r = await client.get(url=DAILY_URL, headers=header, params=get_sign(date))
-            re_data: dict = r.json()
-            return re_data
-    except Exception as e:
-        print(e)
-        return {"code": 500, 
-                "message": "error" }
+    async with httpx.AsyncClient(timeout=None) as client:
+        r = await client.get(url=DAILY_URL, headers=header, params=get_sign(date))
+        re_data: dict = r.json()
+        await check_data(re_data)
+        return re_data
 
 
 async def get_rate_data():
-    try:
-        async with httpx.AsyncClient(timeout=None) as client:
-            r = await client.get(url=RATE_URL, headers=header, params=get_sign())
-            re_data: dict = r.json()
-            return re_data
-    except Exception as e:
-        print(e)
-        return {"code": 500,
-                "message": "error"}
+    async with httpx.AsyncClient(timeout=None) as client:
+        r = await client.get(url=RATE_URL, headers=header, params=get_sign())
+        re_data: dict = r.json()
+        await check_data(re_data)
+        return re_data
 
 
 # 获取sign
@@ -109,3 +92,17 @@ def get_sign(date: str = None) -> dict:
     data['sign'] = sign
 
     return data
+
+
+# 数据校验
+async def check_data(data: dict) -> None:
+    msg = f"接口错误码code: {data['code']}\n接口提示信息message: {data['message']}\n可能的解决办法:"
+    if data["code"] == -101:
+        msg += " 请检查cookies是否放好，如果放好了还是这个错误就去百宝袋更新cookies"
+        raise RuntimeError(f"\n{msg}")
+    elif data["code"] == -400:
+        msg += " 请求接口的参数不对，请联系开发者修BUG"
+        raise RuntimeError(f"\n{msg}")
+    elif data["code"] == 11002:
+        msg += " 这是校验失败，请联系开发者修BUG"
+        raise RuntimeError(f"\n{msg}")
