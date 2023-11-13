@@ -2,7 +2,7 @@
  * @Author: 七画一只妖 1157529280@qq.com
  * @Date: 2023-03-27 09:43:36
  * @LastEditors: 七画一只妖 1157529280@qq.com
- * @LastEditTime: 2023-11-13 14:01:16
+ * @LastEditTime: 2023-11-13 17:25:40
  * @FilePath: \060坎公骑冠剑会战工具\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -20,6 +20,7 @@
 >- 1.输出每日伤害报表
 >- 2.输出总榜
 >- 3.查询当前进度
+>- 4.查询所有成员出刀情况（非满刀的值有歧义，是否满刀是正确的，反正值等于3就是出完了）
 
 ### 注意事项/常见问题解决办法
 >- 1.目前没摸清cookies过期时间的规律，如果你一开始可以使用，但是过了几天突然用不了了大概率是cookies过期了
