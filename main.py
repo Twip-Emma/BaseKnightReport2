@@ -2,7 +2,7 @@
 Author: 七画一只妖 1157529280@qq.com
 Date: 2023-03-27 09:01:10
 LastEditors: 七画一只妖 1157529280@qq.com
-LastEditTime: 2023-11-13 16:50:21
+LastEditTime: 2023-11-17 12:02:31
 FilePath: \060坎公骑冠剑会战工具\main.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
@@ -35,7 +35,7 @@ loop = asyncio.get_event_loop()
 #     print(e)
 
 # 出刀
-try:
-    print(loop.run_until_complete(data_format.get_knife("114514")))
-except Exception as e:
-    print(e)
+# try:
+#     print(loop.run_until_complete(data_format.get_knife("114514")))
+# except Exception as e:
+#     print(e)
