@@ -2,7 +2,7 @@
 Author: 七画一只妖 1157529280@qq.com
 Date: 2023-10-07 10:22:42
 LastEditors: 七画一只妖 1157529280@qq.com
-LastEditTime: 2023-11-17 11:50:19
+LastEditTime: 2023-12-01 21:39:20
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
 import asyncio
@@ -38,7 +38,7 @@ async def today_report(user_id):
                 # 存在则累加damage
                 report[user_name][damage["boss_name"]] += damage["damage"]
     # print(report)
-    return make_image(report, user_id)
+    return make_image(report, user_id, "今日伤害")
 
 
 # 获取总榜
@@ -75,7 +75,7 @@ async def all_report(user_id):
                     # 存在则累加damage
                     report[user_name][damage["boss_name"]] += damage["damage"]
     # print(report)
-    return make_image(report, user_id)
+    return make_image(report, user_id, "总排行")
 
 
 # 获取进度

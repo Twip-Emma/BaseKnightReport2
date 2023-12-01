@@ -2,7 +2,7 @@
 Author: 七画一只妖 1157529280@qq.com
 Date: 2023-10-07 10:53:46
 LastEditors: 七画一只妖 1157529280@qq.com
-LastEditTime: 2023-11-17 11:58:28
+LastEditTime: 2023-12-01 21:38:46
 FilePath: \060坎公骑冠剑会战工具\payload2\test2.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
@@ -49,7 +49,7 @@ TEAT_DATA = {
 
 
 # 获取柱状图图表
-def make_image(data, user_id):
+def make_image(data, user_id, cm_type:str):
 
     # 获取所有怪物种类
     monsters = set(monster for user_data in data.values()
@@ -164,7 +164,7 @@ def make_image(data, user_id):
 
     # 保存图表为图片文件
     # image.show()
-    path = f"{BASE_PATH}\\cache\\表格图_{user_id}.jpg"
+    path = f"{BASE_PATH}\\cache\\{cm_type}图_{user_id}.jpg"
     image.save(path)
     return path
 
