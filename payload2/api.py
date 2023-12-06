@@ -32,7 +32,7 @@ header = {
     "cache-control": "no-cache",
     "connection": f"keep-alive"}
 
-header["cookie"] = config["cookies"]
+header["cookie"] = f"""SESSDATA={config["SESSDATA"]}"""
 
 
 app_key = 'a5e793dd8b8e425c9bff92ed79e4458f'

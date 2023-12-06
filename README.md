@@ -2,7 +2,7 @@
  * @Author: 七画一只妖 1157529280@qq.com
  * @Date: 2023-03-27 09:43:36
  * @LastEditors: 七画一只妖 1157529280@qq.com
- * @LastEditTime: 2023-12-01 21:49:06
+ * @LastEditTime: 2023-12-06 09:40:58
  * @FilePath: \060坎公骑冠剑会战工具\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -27,16 +27,18 @@
 >- 2.如果不是上面的问题，那么可能是公会数据还没刷新/接口异常等等，我将在以后的更新中捕获异常并给出对应的提示，以便于自己排查问题
 
 ### 使用方法
-> [B站教程](https://www.bilibili.com/video/BV1yz4y1A7PQ/)
+> [B站教程](https://www.bilibili.com/video/BV1yz4y1A7PQ/)【旧版】
 
-1.在config.json文件内填写好你的信息
+1.在config.json文件内填写好`SESSDATA`
 
-2.如何获取cookies？
+2.如何获取`SESSDATA`？
 >- 1.浏览器开启无痕模式，不用无痕也行
 >- 2.打开百宝袋地址 https://game.bilibili.com/tool/gt/
 >- 3.使用B站登录
->- 4.在百宝袋页面按下【F12 没有F12右键审元素】打开DEV开发者工具 在【网络】一栏随便找到一个请求，找到Cookie字段并复制值
->- 5.关闭无痕窗口浏览器（不要使用bigfun退出登录 会导致接口失效 也不要切换账号会立刻失效）
+>- 4.在百宝袋页面按下【F12 没有F12右键审元素】打开DEV开发者工具点击【应用程序(application)】
+>- 5.打开【应用程序(application)】后在左侧菜单栏找到【Cookie】，选择它的子目录【https://game.bilibili.com/】
+>- 6.在右侧找到`SESSDATA`，复制它的值，填入config.json文件对应的地方
+>- 7.关闭浏览器（在这期间不要再登录网站了，也不要退出账号或者切换 不然`SESSDATA`会立刻失效）
 
 3.运行main.py（也不用管不管注释了，直接运行就行，反正会分别生成4张图出来）
 
