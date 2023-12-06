@@ -2,7 +2,7 @@
 Author: 七画一只妖 1157529280@qq.com
 Date: 2023-10-06 23:32:24
 LastEditors: 七画一只妖 1157529280@qq.com
-LastEditTime: 2023-11-13 16:11:01
+LastEditTime: 2023-12-06 10:35:49
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
 import hashlib
@@ -98,7 +98,7 @@ def get_sign(date: str = None) -> dict:
 async def check_data(data: dict) -> None:
     msg = f"接口错误码code: {data['code']}\n接口提示信息message: {data['message']}\n可能的解决办法:"
     if data["code"] == -101:
-        msg += " 请检查cookies是否放好，如果放好了还是这个错误就去百宝袋更新cookies"
+        msg += " 请检查SESSDATA是否放好，如果放好了还是这个错误就去百宝袋更新SESSDATA"
         raise RuntimeError(f"\n{msg}")
     elif data["code"] == -400:
         msg += " 请求接口的参数不对，请联系开发者修BUG"
