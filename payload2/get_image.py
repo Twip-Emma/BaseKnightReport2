@@ -2,7 +2,7 @@
 Author: 七画一只妖 1157529280@qq.com
 Date: 2023-10-07 10:53:46
 LastEditors: 七画一只妖 1157529280@qq.com
-LastEditTime: 2023-12-01 21:38:46
+LastEditTime: 2023-12-08 09:16:13
 FilePath: \060坎公骑冠剑会战工具\payload2\test2.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
@@ -251,7 +251,7 @@ def get_knife_image(data: dict, user_id: str, date_list:list) -> str:
         y_centered = margin + row * cell_height + \
             (cell_height - text_height) // 2
         draw.text((x_centered, y_centered), name, fill='black', font=font)
-        index = 1
+        index = 0
         for col, number in enumerate(range(1, table_width), start=1):
             try:
                 date = date_list[len(date_list) - index - 1]

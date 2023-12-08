@@ -17,22 +17,22 @@ loop = asyncio.get_event_loop()
 # 填写完cookies之后就能在这操作了，想要运行下面功能就把哪行解开运行即可
 
 # 日报
-try:
-    print(loop.run_until_complete(data_format.today_report("114514")))
-except Exception as e:
-    print(e)
+# try:
+#     print(loop.run_until_complete(data_format.today_report("114514")))
+# except Exception as e:
+#     print(e)
 
 # 总伤
-try:
-    print(loop.run_until_complete(data_format.all_report("114514")))
-except Exception as e:
-    print(e)
+# try:
+#     print(loop.run_until_complete(data_format.all_report("114514")))
+# except Exception as e:
+#     print(e)
 
 # 进度
-try:
-    print(loop.run_until_complete(data_format.get_rate("114514")))
-except Exception as e:
-    print(e)
+# try:
+#     print(loop.run_until_complete(data_format.get_rate("114514")))
+# except Exception as e:
+#     print(e)
 
 # 出刀
 try:
